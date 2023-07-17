@@ -4,12 +4,11 @@ from dotenv import load_dotenv
 import os
 import random
 
+
 auth_manager = SpotifyClientCredentials()
 spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
 
-# All Out 10s/00s/90s/80s/70s/60s from Spotify
-playlists = ["37i9dQZF1DX5Ejj0EkURtP", "37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l",
-             "37i9dQZF1DX4UtSsGT1Sbe", "37i9dQZF1DWTJ7xPn4vNaz", "37i9dQZF1DXaKIA8E7WcJj"]
+playlists = ["62QmFVktcgA00V8q4QnxSH"]
 
 
 def get_random_song():
