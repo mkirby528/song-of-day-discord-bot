@@ -11,8 +11,7 @@ auth_manager = SpotifyClientCredentials()
 spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
 
 
-
-playlists = ["37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l", "37i9dQZF1DX4UtSsGT1Sbe","37i9dQZF1DWTJ7xPn4vNaz","37i9dQZF1DXaKIA8E7WcJj"]
+playlists = ["37i9dQZF1DX5Ejj0EkURtP","37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l", "37i9dQZF1DX4UtSsGT1Sbe","37i9dQZF1DWTJ7xPn4vNaz","37i9dQZF1DXaKIA8E7WcJj"]
 def get_random_song():
     playlist_items = get_playlist_tracks(random.choice(playlists))
     track = random.choice(playlist_items)["track"]
