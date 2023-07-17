@@ -11,7 +11,7 @@ GUILD = os.getenv('DISCORD_GUILD')
 MUSIC_CHANNEL = int(os.getenv('DISCORD_MUSIC_CHANNEL'))
 client = discord.Client(intents=discord.Intents.default())
 
-def send_message():
+def send_message(event, context):
     @client.event
     async def on_ready():
         global message_sent
