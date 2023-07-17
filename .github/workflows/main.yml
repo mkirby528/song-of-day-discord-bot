@@ -14,7 +14,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::794553525198:role/github-actions
-          aws-region: us-east-
+          aws-region: us-east-1
       - name: build and deploy
         run: |
           chmod +x ./.github/scripts/buildAndDeploy.sh 
