@@ -8,13 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Configure AWS credentials 
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::794553525198:role/github-actions
-          aws-region: us-east-1
+      - uses: actions/checkout@v3
       - name: build and deploy
         run: |
           chmod +x ./.github/scripts/buildAndDeploy.sh 
@@ -24,5 +18,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'us-east-1'
-          LAMBDA_NAME: 'song-of-day-discord-bot'
+          LAMBDA_NAME: 'music-review-api'
           AWS_REGION: 'us-east-1'
