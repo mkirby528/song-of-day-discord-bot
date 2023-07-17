@@ -34,5 +34,5 @@ def send_message(event, context):
 
         await channel.send(song_of_day_string)
         await client.close()
-
+        return 1 
     client.run(TOKEN)
