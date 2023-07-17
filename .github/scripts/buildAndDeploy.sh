@@ -1,7 +1,7 @@
 !/bin/bash
 
 echo "Installing dependencies..."
-pip install  --target ./package -r src/requirements.txt
+pip install  --target ./package -r ./requirements.txt
 echo "Creating deployment package..."
 cd package
 zip -r ../archive.zip .
