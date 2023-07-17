@@ -18,5 +18,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'us-east-1'
-          LAMBDA_NAME: 'music-review-api'
+          LAMBDA_NAME: 'discord-song-of-day-bot'
           AWS_REGION: 'us-east-1'
