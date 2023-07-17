@@ -25,14 +25,16 @@ def send_message(event, context):
         channel = client.get_channel(MUSIC_CHANNEL)
 
         song = get_random_song()
+        print(song)
         name = song['name']
         artist = song['artist']
         url = song['url']
 
         new_line = '\n'
-        song_of_day_string = (f'Song of the day: {name} by {artist} {new_line} {url}')
-
-        await channel.send(song_of_day_string)
-        await client.close()
-        return 1 
+        song_of_day_string = (
+            f'Song of the day: {name} by {artist} {new_line} {url}')
+        print(song_of_day_string)
+        # await channel.send(song_of_day_string)
+        # await client.close()
+        return 1
     client.run(TOKEN)
