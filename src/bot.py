@@ -34,7 +34,9 @@ def send_message(event, context):
         song_of_day_string = (
             f'Song of the day: {name} by {artist} {new_line} {url}')
         print(song_of_day_string)
+        print("About to send")
         await channel.send(song_of_day_string)
+        print("Sent")
         await client.close()
         return 1
     client.run(TOKEN)
