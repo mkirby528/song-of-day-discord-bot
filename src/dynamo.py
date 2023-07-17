@@ -8,6 +8,7 @@ table = dynamodb_resource.Table(TABLE_NAME)
 
 
 def insert_item(item):
+    print(f'Inserting {item} into table')
     return table.put_item(Item=item)
 
 
