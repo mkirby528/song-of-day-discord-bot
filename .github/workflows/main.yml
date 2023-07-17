@@ -8,7 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::794553525198:role/github-actions
+          aws-region: us-east-
       - name: build and deploy
         run: |
           chmod +x ./.github/scripts/buildAndDeploy.sh 
