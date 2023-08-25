@@ -15,3 +15,11 @@ def insert_item(item):
 def item_in_table(item):
     response = table.query(KeyConditionExpression=Key('id').eq(item['id']))
     return len(response["Items"]) != 0
+
+def get_all_items():
+        response = table.scan()
+        data = response.get('Items')
+        while 'LastEvaluatedKey' in response:
+            response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
+            data.extend(response['Items'])
+        return data

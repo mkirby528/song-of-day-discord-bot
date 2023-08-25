@@ -29,10 +29,11 @@ def send_message(event, context):
         name = song['name']
         artist = song['artist']
         url = song['url']
-
+        added_by = song['added_by']
         new_line = '\n'
         song_of_day_string = (
-            f'Song of the day: {name} by {artist} {new_line} {url}')
+            f'Song of the day: {name} by {artist}. Added by: {added_by} {new_line} {url}')
+
         print(song_of_day_string)
         print("About to send")
         await channel.send(song_of_day_string)
