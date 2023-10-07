@@ -25,18 +25,21 @@ def send_message(event, context):
         channel = client.get_channel(MUSIC_CHANNEL)
 
         song = get_random_song()
-        print(song)
-        name = song['name']
-        artist = song['artist']
-        url = song['url']
-        added_by = song['added_by']
-        new_line = '\n'
-        song_of_day_string = (
-            f'Song of the day: {name} by {artist}. Added by: {added_by} {new_line} {url}')
-
-        print(song_of_day_string)
-        print("About to send")
-        await channel.send(song_of_day_string)
+        output_sting = ''
+        if song:
+            print(song)
+            name = song['name']
+            artist = song['artist']
+            url = song['url']
+            added_by = song['added_by']
+            new_line = '\n'
+            output_sting = (
+                f'Song of the day: {name} by {artist}. Added by: {added_by} {new_line} {url}')
+            print(output_sting)
+        else:
+            output_sting = "Out of songs, please add more songs to playlist"
+        print(f"About to send: {output_sting}")
+        await channel.send(output_sting)
         print("Sent")
         await client.close()
         return 1
