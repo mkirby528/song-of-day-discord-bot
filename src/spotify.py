@@ -29,7 +29,7 @@ def get_random_song():
             'added_by': track["added_by"]["id"]
         }
         insert_item(formatted_song)
-        return formatted_song
+        return formatted_song,len(eligible_songs)
 
     else:
         return None

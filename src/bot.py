@@ -24,7 +24,7 @@ def send_message(event, context):
 
         channel = client.get_channel(MUSIC_CHANNEL)
 
-        song = get_random_song()
+        song, num_remaining = get_random_song()
         output_sting = ''
         if song:
             print(song)
@@ -34,7 +34,7 @@ def send_message(event, context):
             added_by = song['added_by']
             new_line = '\n'
             output_sting = (
-                f'Song of the day: {name} by {artist}. Added by: {added_by} {new_line} {url}')
+                f'Song of the day: {name} by {artist}. Added by: {added_by} {new_line} Songs Remaining; {num_remaining} {new_line} {url}')
             print(output_sting)
         else:
             output_sting = "Out of songs, please add more songs to playlist"
